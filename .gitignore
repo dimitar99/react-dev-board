@@ -47,3 +47,5 @@ routeTree.gen.ts
 
 # TypeScript
 *.tsbuildinfo
+.*
+!.gitignore
