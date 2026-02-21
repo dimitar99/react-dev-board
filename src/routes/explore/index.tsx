@@ -4,6 +4,7 @@ import { ResourceCard } from '../../components/ui/ResourceCard'
 import { useResourceStore } from '../../features/resources/useResourceStore'
 import { useDebounce } from '@/hooks/useDebounce'
 import { Loader } from '@/components/ui/Loader'
+import { ErrorComponent } from '@/components/ui/ErrorComponent'
 
 type ResourceSearch = {
   q?: string
@@ -92,6 +93,10 @@ function Explore() {
 
   if (isLoadingResources || isLoadingCategories) {
     return Loader()
+  }
+
+  if (resourcesError) {
+    return ErrorComponent({ error: resourcesError || categoriesError })
   }
 
   return (

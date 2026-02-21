@@ -29,6 +29,7 @@ logs/
 .env*.local
 
 # Editor / IDE (VS Code, JetBrains)
+.vscode
 .vscode/*
 !.vscode/extensions.json
 .idea/
