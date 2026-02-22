@@ -102,22 +102,22 @@ function Explore() {
   return (
     <div className='px-4'>
 
-      <div className='bg-white pt-6 pb-6'>
-        <h3 className="text-2xl font-semibold text-black">Explore Resources</h3>
-        <p className="text-s text-gray-600">Browse and search through available resources</p>
+      <div className='bg-white dark:bg-gray-900 pt-6 pb-6'>
+        <h3 className="text-2xl font-semibold text-black dark:text-white">Explore Resources</h3>
+        <p className="text-s text-gray-600 dark:text-gray-400">Browse and search through available resources</p>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-9 gap-4 p-4 border border-gray-200 rounded'>
+      <div className='grid grid-cols-1 md:grid-cols-9 gap-4 p-4 border border-gray-200 dark:border-gray-700 rounded bg-white dark:bg-gray-800 shadow-sm'>
 
         <input
-          className='border border-gray-200 rounded p-2 md:col-span-4 w-full'
+          className='border border-gray-200 dark:border-gray-700 rounded p-2 md:col-span-4 w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
           type="search"
           placeholder='Search...'
           value={search}
           onChange={(e) => setSearch(e.target.value)} />
 
         {!categoriesError && <select
-          className='border border-gray-200 rounded p-2 md:col-span-2 w-full'
+          className='border border-gray-200 dark:border-gray-700 rounded p-2 md:col-span-2 w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
           value={category}
           onChange={(e) => updateFilters({ category: e.target.value })}
         >
@@ -129,7 +129,7 @@ function Explore() {
         </select>}
 
         <select
-          className='border border-gray-200 rounded p-2 md:col-span-2 w-full'
+          className='border border-gray-200 dark:border-gray-700 rounded p-2 md:col-span-2 w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
           value={sort}
           onChange={(e) => updateFilters({ sort: e.target.value })}
         >
@@ -148,8 +148,8 @@ function Explore() {
 
       </div>
 
-      <div className='mt-6'>
-        <p className='text-s text-gray-600 mb-4'>{filteredResources.length} results</p>
+      <div className='mt-6 pb-8'>
+        <p className='text-s text-gray-600 dark:text-gray-400 mb-4'>{filteredResources.length} results</p>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
           {filteredResources.map((resource) => (<ResourceCard resource={resource} />))}
