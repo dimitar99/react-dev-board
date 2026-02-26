@@ -24,16 +24,14 @@ export const Route = createFileRoute('/explore/')({
 })
 
 function Explore() {
-  const {
-    resources,
-    fetchResources,
-    isLoadingResources,
-    resourcesError,
-    categories,
-    fetchCategories,
-    isLoadingCategories,
-    categoriesError
-  } = useResourceStore()
+  const fetchResources = useResourceStore((state) => state.fetchResources)
+  const resources = useResourceStore((state) => state.resources)
+  const isLoadingResources = useResourceStore((state) => state.isLoadingResources)
+  const resourcesError = useResourceStore((state) => state.resourcesError)
+  const categories = useResourceStore((state) => state.categories)
+  const fetchCategories = useResourceStore((state) => state.fetchCategories)
+  const isLoadingCategories = useResourceStore((state) => state.isLoadingCategories)
+  const categoriesError = useResourceStore((state) => state.categoriesError)
 
   const { q, category, sort } = Route.useSearch()
   const navigate = useNavigate({ from: Route.fullPath })

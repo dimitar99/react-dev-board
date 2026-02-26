@@ -3,7 +3,8 @@ import { Link } from '@tanstack/react-router'
 import { Sun, Moon } from 'lucide-react'
 
 export const Header = () => {
-    const { isDarkMode, toggleTheme } = useThemeStore()
+    const isDarkMode = useThemeStore((state) => state.isDarkMode)
+    const toggleTheme = useThemeStore((state) => state.toggleTheme)
 
     return (
         <header className='flex items-center justify-between px-8 py-4 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all'>
